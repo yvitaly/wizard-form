@@ -1,0 +1,17 @@
+.steps-form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label, input{
+    display: block;
+}
+
+.steps-box{
+    border: 1px solid #000;
+    padding: 30px;
+}
+
+h2{
+    color:red;
+}
