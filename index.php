@@ -1,6 +1,5 @@
 <?php
 
-echo 'haloo';
 
 use application\core\Router;
 

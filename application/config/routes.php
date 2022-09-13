@@ -4,4 +4,8 @@ return [
         'controller'=>'users',
         'action'=>'index',
     ],
+    'wizard-form/main' =>[
+        'controller'=>'main',
+        'action'=>'index',
+    ],
 ];
