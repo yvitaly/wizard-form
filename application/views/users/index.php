@@ -21,7 +21,9 @@
         </tr>
         <?php foreach($vars['users'] as $user) {?>
             <tr>
-                <td>Photo</td>
+                <td>
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($user->photo); ?>" />
+                </td>
                 <td><?php echo $user->firstName . ' ' . $user->lastName; ?></td>
                 <td><?php echo $user->reportSubject; ?></td>
                 <td><?php echo $user->email; ?></td>
