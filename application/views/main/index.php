@@ -87,6 +87,27 @@
 
     </div>
 
+    <div class="social" style="display: none">
+        <ul>
+            <li>
+                <a class="facebook" href="">
+                    <i class="fa fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="twitter" href="">
+                    <i class="fa fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+            </li>
+        </ul>
+
+        <a class="btn btn-primary" href="/wizard-form/users" role="button">All members ()</a>
+
+    </div>
+
     <script>
         $(document).ready(function (){
             $('button.firstNext').on('click',function() {
@@ -108,7 +129,14 @@
                         reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, email: emailVal }
                 })
             })
+            $(document).ready(function (){
+                $('button.secondNext').on('click',function() {
+                    $('.social').css('display', 'block');
+                    $('.secondStep').css('display', 'none');
+                })
+            });
         });
     </script>
+
 </body>
 </html>
