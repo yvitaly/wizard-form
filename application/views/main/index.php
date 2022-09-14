@@ -81,6 +81,7 @@
 
         <label>Check your photo</label>
         <input type="file" class="form-control-file photo" name="photo">
+        <br/>
 
         <button class="secondNext">Next</button>
 
@@ -96,6 +97,9 @@
                 var countryVal = $('select.country').val();
                 var phoneVal = $('input.phone').val();
                 var emailVal = $('input.email').val();
+
+                $('.firstStep').css('display', 'none');
+                $('.secondStep').css('display', 'block');
 
                 $.ajax({
                     method: "POST",
