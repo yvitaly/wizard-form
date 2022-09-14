@@ -21,28 +21,44 @@
 </div>
     <br/>
 <!--Google Maps-->
-
-    <h5>"To participate in the conference, please fill out the form”</h5>
+    <div class="firstStep">
+    <h2>"To participate in the conference, please fill out the form”</h2>
     <form>
-        <input type="text" class="form-control" placeholder="Contoh form text ...">
-
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First Name">
         <br/>
 
-        <input type="number" class="form-control" placeholder="Contoh form angka ...">
-
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name">
         <br/>
 
+        <label>Your Birthday</label>
+        <input type="text" class="form-control" >
+        <br/>
+
+        <label>Report Subject</label>
+        <input type="text" class="form-control" placeholder="Report Subject">
+        <br/>
+
+        <label>Your Country</label>
         <select name="" class="form-control">
-            <option value="">Contoh Form Dropdown</option>
-            <option value="">Contoh 1</option>
-            <option value="">Contoh 2</option>
-            <option value="">Contoh 3</option>
+            <option value="">Ukraine</option>
+            <option value="">Poland</option>
+            <option value="">Germany</option>
+            <option value="">France</option>
+            <option value="">Denmark</option>
         </select>
-
         <br/>
 
-        <textarea class="form-control" rows="3" placeholder="Contoh textarea .."></textarea>
-    </form>
+        <label>Your phone</label>
+        <input type="tel" class="form-control" placeholder="+1(555)555-5555">
+        <br/>
 
+        <label>Your email</label>
+        <input type="email" class="form-control" >
+        <br/>
+
+    </form>
+    </div>
 </body>
 </html>
