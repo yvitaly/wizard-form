@@ -8,4 +8,9 @@ return [
         'controller'=>'main',
         'action'=>'index',
     ],
+
+    'wizard-form/firstform'=>[
+        'controller'=>'users',
+        'action'=>'create',
+    ]
 ];

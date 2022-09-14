@@ -13,7 +13,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='http://localhost/wizard-form/public/js/main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 <!--Google map-->
     <div id="map-container-google-1" class="container-fluid" style="height: 450px;">
@@ -25,45 +25,66 @@
     <h2>"To participate in the conference, please fill out the form”</h2>
 
     <div class="firstStep">
-        <form action="action.php" method="post">
+
             <label>First Name</label>
-            <input type="text" class="form-control" placeholder="First Name" name="firstName">
+            <input type="text" class="form-control firstName" placeholder="First Name" name="firstName">
         <br/>
 
             <label>Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+            <input type="text" class="form-control lastName" placeholder="Last Name" name="lastName">
         <br/>
 
             <label>Your Birthday</label>
-            <input type="date" class="form-control" name="birthdate">
+            <input type="date" class="form-control birthdate" name="birthdate">
         <br/>
 
             <label>Report Subject</label>
-            <input type="text" class="form-control" placeholder="Report Subject" name="reportSubject">
+            <input type="text" class="form-control reportSubject" placeholder="Report Subject" name="reportSubject">
         <br/>
 
             <label>Your Country</label>
-            <select name="country" class="form-control" >
-                <option value="">Ukraine</option>
-                <option value="">Poland</option>
-                <option value="">Germany</option>
-                <option value="">France</option>
-                <option value="">Denmark</option>
+            <select name="country" class="form-control country" >
+                <option >Ukraine</option>
+                <option >Poland</option>
+                <option >Germany</option>
+                <option >France</option>
+                <option >Denmark</option>
             </select>
         <br/>
 
             <label>Your phone</label>
-            <input type="tel" class="form-control" placeholder="+1(555)555-5555" name="phone">
+            <input type="tel" class="form-control phone" placeholder="+1(555)555-5555" name="phone">
         <br/>
 
             <label>Your email</label>
-            <input type="email" class="form-control" name="email">
+            <input type="email" class="form-control email" name="email">
         <br/>
 
             <button class="firstNext">Next</button>
 
-        </form>
 
     </div>
+
+
+    <script>
+        $(document).ready(function (){
+            $('button.firstNext').on('click',function() {
+                var firstNameVal = $('input.firstName').val();
+                var lastNameVal = $('input.lastName').val();
+                var birthdateVal = $('input.birthdate').val();
+                var reportSubjectVal = $('input.reportSubject').val();
+                var countryVal = $('select.country').val();
+                var phoneVal = $('input.phone').val();
+                var emailVal = $('input.email').val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "/wizard-form/action.php",
+                    data: { firstName: firstNameVal, lastName: lastNameVal, birthdate: birthdateVal,
+                        reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, emai: emailVal }
+                })
+            })
+        });
+    </script>
 </body>
 </html>
