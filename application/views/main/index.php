@@ -16,49 +16,54 @@
     <script type='text/javascript' src='http://localhost/wizard-form/public/js/main.js'></script>
 
 <!--Google map-->
-<div id="map-container-google-1" class="container-fluid" style="height: 450px;">
-    <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.7617225383497!2d-118.34368359999999!3d34.101244099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf20e4c82873%3A0x14015754d926dadb!2s7060%20Hollywood%20Blvd%2C%20Los%20Angeles%2C%20CA%2090028%2C%20USA!5e0!3m2!1sen!2sua!4v1663071805266!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+    <div id="map-container-google-1" class="container-fluid" style="height: 450px;">
+        <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.7617225383497!2d-118.34368359999999!3d34.101244099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf20e4c82873%3A0x14015754d926dadb!2s7060%20Hollywood%20Blvd%2C%20Los%20Angeles%2C%20CA%2090028%2C%20USA!5e0!3m2!1sen!2sua!4v1663071805266!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     <br/>
 <!--Google Maps-->
-    <div class="firstStep">
+
     <h2>"To participate in the conference, please fill out the form”</h2>
-    <form>
-        <label>First Name</label>
-        <input type="text" class="form-control" placeholder="First Name">
+
+    <div class="firstStep">
+        <form action="action.php" method="post">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstName">
         <br/>
 
-        <label>Last Name</label>
-        <input type="text" class="form-control" placeholder="Last Name">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastName">
         <br/>
 
-        <label>Your Birthday</label>
-        <input type="text" class="form-control" >
+            <label>Your Birthday</label>
+            <input type="date" class="form-control" name="birthdate">
         <br/>
 
-        <label>Report Subject</label>
-        <input type="text" class="form-control" placeholder="Report Subject">
+            <label>Report Subject</label>
+            <input type="text" class="form-control" placeholder="Report Subject" name="reportSubject">
         <br/>
 
-        <label>Your Country</label>
-        <select name="" class="form-control">
-            <option value="">Ukraine</option>
-            <option value="">Poland</option>
-            <option value="">Germany</option>
-            <option value="">France</option>
-            <option value="">Denmark</option>
-        </select>
+            <label>Your Country</label>
+            <select name="country" class="form-control" >
+                <option value="">Ukraine</option>
+                <option value="">Poland</option>
+                <option value="">Germany</option>
+                <option value="">France</option>
+                <option value="">Denmark</option>
+            </select>
         <br/>
 
-        <label>Your phone</label>
-        <input type="tel" class="form-control" placeholder="+1(555)555-5555">
+            <label>Your phone</label>
+            <input type="tel" class="form-control" placeholder="+1(555)555-5555" name="phone">
         <br/>
 
-        <label>Your email</label>
-        <input type="email" class="form-control" >
+            <label>Your email</label>
+            <input type="email" class="form-control" name="email">
         <br/>
 
-    </form>
+            <button class="firstNext">Next</button>
+
+        </form>
+
     </div>
 </body>
 </html>
