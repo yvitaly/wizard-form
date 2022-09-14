@@ -39,4 +39,13 @@ class Db{
         $result = $this->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function insertUser($data){
+
+        $sql = 'INSERT INTO users (firstName, lastName, birthdate, reportSubject, country,phone, email)
+VALUES(:firstName, :lastName, :birthdate, :reportSubject, :country, :phone, :email)';
+        $statement= $this->db->prepare($sql);
+        return $statement->execute($data);
+
+    }
 }

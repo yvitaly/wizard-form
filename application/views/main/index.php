@@ -24,7 +24,7 @@
 
     <h2>"To participate in the conference, please fill out the form”</h2>
 
-    <div class="firstStep">
+    <div class="firstStep" style="display: block">
 
             <label>First Name</label>
             <input type="text" class="form-control firstName" placeholder="First Name" name="firstName">
@@ -62,9 +62,29 @@
 
             <button class="firstNext">Next</button>
 
-
     </div>
 
+
+    <div class="secondStep" style="display: none">
+
+        <label>Company</label>
+        <input type="text" class="form-control company" placeholder="Company" name="company">
+        <br/>
+
+        <label>Position</label>
+        <input type="text" class="form-control position" placeholder="Position" name="position">
+        <br/>
+
+        <label>About you</label>
+        <textarea class="form-control aboutMe" rows="3" placeholder="About you .." name="aboutMe"></textarea>
+        <br/>
+
+        <label>Check your photo</label>
+        <input type="file" class="form-control-file photo" name="photo">
+
+        <button class="secondNext">Next</button>
+
+    </div>
 
     <script>
         $(document).ready(function (){
@@ -79,9 +99,9 @@
 
                 $.ajax({
                     method: "POST",
-                    url: "/wizard-form/action.php",
+                    url: "/wizard-form/firstform",
                     data: { firstName: firstNameVal, lastName: lastNameVal, birthdate: birthdateVal,
-                        reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, emai: emailVal }
+                        reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, email: emailVal }
                 })
             })
         });
