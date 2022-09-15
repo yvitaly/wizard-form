@@ -12,5 +12,10 @@ return [
     'wizard-form/firstform'=>[
         'controller'=>'users',
         'action'=>'create',
+    ],
+
+    'wizard-form/secondform'=>[
+        'controller'=>'users',
+        'action'=>'updete',
     ]
 ];

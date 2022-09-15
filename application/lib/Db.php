@@ -50,4 +50,10 @@ VALUES(:firstName, :lastName, :birthdate, :reportSubject, :country, :phone, :ema
         return $userId;
 
     }
+
+    public function updateUser($data){
+        $sql = 'UPDATE users SET firstName, lastName, birthdate, reportSubject, country,phone, email  WHERE userId =1';
+        $statement= $this->db->prepare($sql);
+        $statement->execute($data);
+    }
 }

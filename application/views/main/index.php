@@ -73,7 +73,7 @@ else { echo "style=display:none";} ?> >
     } else {
         echo "style=display:none";
     } ?> >
-
+        <input type="hidden" name="userId" class="userId" value ="<?php echo $_SESSION['userId'];?>" >
         <label>Company</label>
         <input type="text" class="form-control company" placeholder="Company" name="company">
         <br/>
@@ -126,6 +126,7 @@ else { echo "style=display:none";} ?> >
                 var phoneVal = $('input.phone').val();
                 var emailVal = $('input.email').val();
 
+
                $('.firstStep').css('display', 'none');
                $('.secondStep').css('display', 'block');
                 $.ajax({
@@ -137,8 +138,23 @@ else { echo "style=display:none";} ?> >
             })
             $(document).ready(function (){
                 $('button.secondNext').on('click',function() {
-                    $('.social').css('display', 'block');
-                    $('.secondStep').css('display', 'none');
+                    var userIdVal = $('input.userId').val();
+
+                    console.log(userIdVal);
+                    var companyVal = $('input.company').val();
+                    var positionVal = $('input.position').val();
+                    var aboutMeVal = $('textarea.aboutMe').val();
+                    var photoVal = $('input.photo').val();
+
+                    //$('.social').css('display', 'block');
+                    //$('.secondStep').css('display', 'none');
+
+                    $.ajax({
+                        method: "POST",
+                        url: "/wizard-form/secondform",
+                        data: { company: companyVal, position: positionVal, aboutMe: aboutMeVal,
+                            photo: photoVal }
+                        })
                 })
             });
         });

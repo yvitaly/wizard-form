@@ -20,20 +20,23 @@ class UsersController extends Controller
             "phone"=>$_POST['phone'],
             "email"=>$_POST['email'],
 
+
+
         ];
 
        $userModel = new User();
        $userId = $userModel->create($data);
        $_SESSION['userId']=$userId;
        echo $userId;
+    }
 
+    public function updateAction(){
 
-
-
-
-
+        $userModel = new User();
 
     }
+
+
     public function indexAction()
     {
         $userModel = new User();

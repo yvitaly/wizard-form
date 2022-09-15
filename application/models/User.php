@@ -19,4 +19,8 @@ class User extends Model
         $userId = $this->db->insertUser($data);
         return $userId;
     }
+
+    public function update($data){
+
+    }
 }
