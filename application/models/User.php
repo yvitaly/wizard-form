@@ -16,6 +16,7 @@ class User extends Model
 
     public function create($data){
 
-       return $this->db->insertUser($data);
+        $userId = $this->db->insertUser($data);
+        return $userId;
     }
 }

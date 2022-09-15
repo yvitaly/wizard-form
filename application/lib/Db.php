@@ -45,7 +45,9 @@ class Db{
         $sql = 'INSERT INTO users (firstName, lastName, birthdate, reportSubject, country,phone, email)
 VALUES(:firstName, :lastName, :birthdate, :reportSubject, :country, :phone, :email)';
         $statement= $this->db->prepare($sql);
-        return $statement->execute($data);
+        $statement->execute($data);
+        $userId = $this->db->lastInsertId();
+        return $userId;
 
     }
 }

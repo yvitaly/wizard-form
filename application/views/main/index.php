@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,13 +22,15 @@
     </div>
     <br/>
 <!--Google Maps-->
-
+    <?php var_dump($_SESSION); ?>
     <h2>"To participate in the conference, please fill out the form”</h2>
 
-    <div class="firstStep" style="display: block">
+<div class="firstStep" <?php if (empty($_SESSION['userId'])){
+    echo "style=display:block";}
+else { echo "style=display:none";} ?> >
 
             <label>First Name</label>
-            <input type="text" class="form-control firstName" placeholder="First Name" name="firstName">
+            <input type="text" class="form-control firstName" placeholder="First Name" name="firstName" >
         <br/>
 
             <label>Last Name</label>
@@ -65,7 +68,11 @@
     </div>
 
 
-    <div class="secondStep" style="display: none">
+    <div class="secondStep" <?php if (!empty($_SESSION['userId'])) {
+        echo "style=display:block";
+    } else {
+        echo "style=display:none";
+    } ?> >
 
         <label>Company</label>
         <input type="text" class="form-control company" placeholder="Company" name="company">
@@ -119,9 +126,8 @@
                 var phoneVal = $('input.phone').val();
                 var emailVal = $('input.email').val();
 
-                $('.firstStep').css('display', 'none');
-                $('.secondStep').css('display', 'block');
-
+               $('.firstStep').css('display', 'none');
+               $('.secondStep').css('display', 'block');
                 $.ajax({
                     method: "POST",
                     url: "/wizard-form/firstform",
@@ -136,6 +142,7 @@
                 })
             });
         });
+
     </script>
 
 </body>

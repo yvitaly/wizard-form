@@ -10,7 +10,7 @@ use PDO;
 class UsersController extends Controller
 {
     public function createAction(){
-        var_dump('sfdfsd');
+
         $data = [
             "firstName"=>$_POST['firstName'],
             "lastName"=>$_POST['lastName'],
@@ -23,7 +23,12 @@ class UsersController extends Controller
         ];
 
        $userModel = new User();
-       $users = $userModel->create($data);
+       $userId = $userModel->create($data);
+       $_SESSION['userId']=$userId;
+       echo $userId;
+
+
+
 
 
 
