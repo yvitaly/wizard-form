@@ -24,7 +24,7 @@
 <!--Google Maps-->
 
 
-<div class="firstStep" <?php if (empty($_SESSION['userId'])){
+<div class="firstStep container mt-4 mb-5" <?php if (empty($_SESSION['userId'])){
     echo "style=display:block";}
 else { echo "style=display:none";} ?> >
     <h2>"To participate in the conference, please fill out the form”</h2>
@@ -68,7 +68,7 @@ else { echo "style=display:none";} ?> >
     </div>
 
 
-    <div class="secondStep" <?php if (!empty($_SESSION['userId'])) {
+    <div class="secondStep container mt-4 mb-5" <?php if (!empty($_SESSION['userId'])) {
         echo "style=display:block";
     } else {
         echo "style=display:none";
@@ -95,7 +95,7 @@ else { echo "style=display:none";} ?> >
 
     </div>
 
-    <div class="social" style="display: none">
+    <div class="social container mt-4 mb-5" style="display: none">
         <ul>
             <li>
                 <a class="facebook" href="">
