@@ -22,14 +22,13 @@
     </div>
     <br/>
 <!--Google Maps-->
-    <?php var_dump($_SESSION); ?>
 
 
 <div class="firstStep" <?php if (empty($_SESSION['userId'])){
     echo "style=display:block";}
 else { echo "style=display:none";} ?> >
     <h2>"To participate in the conference, please fill out the form”</h2>
-            <p class="errormess"></p>
+            <p class="errormess" style="color: red"></p>
             <label>First Name</label>
             <input type="text" class="form-control firstName" placeholder="First Name" name="firstName" >
         <br/>
@@ -129,6 +128,37 @@ else { echo "style=display:none";} ?> >
                 var emailVal = $('input.email').val();
                 var userId = $('input.userId').val();
 
+                if(firstNameVal=="") {
+                    $('.errormess').text("All field must not be empty");
+                    console.log("error");
+                    return false;
+                }
+                else if (lastNameVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+                else if (birthdateVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+                else if (reportSubjectVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+                else if (countryVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+                else if (phoneVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+                else if (emailVal==""){
+                    $('.errormess').text("All field must not be empty");
+                    return false;
+                }
+
+                $('.errormess').text("");
 
                $('.firstStep').css('display', 'none');
                $('.secondStep').css('display', 'block');
