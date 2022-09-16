@@ -7,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://localhost/wizard-form/public/css/style2.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -56,7 +57,8 @@ else { echo "style=display:none";} ?> >
         <br/>
 
             <label>Your phone</label>
-            <input type="tel" class="form-control phone" placeholder="+1(555)555-5555" name="phone">
+            <input type="tel" class="form-control phone"  name="phone" placeholder="+1(555)555-5555">
+
         <br/>
 
             <label>Your email</label>
@@ -96,21 +98,15 @@ else { echo "style=display:none";} ?> >
     </div>
 
     <div class="social container mt-4 mb-5" style="display: none">
-        <ul>
-            <li>
-                <a class="facebook" href="">
-                    <i class="fa fa-facebook"></i>
-                    <span>Facebook</span>
-                </a>
-            </li>
 
-            <li>
-                <a class="twitter" href="">
-                    <i class="fa fa-twitter"></i>
-                    <span>Twitter</span>
+                <a class="btn btn-block btn-social btn-facebook">
+                    <span class="fa fa-facebook"></span> ... Facebook
                 </a>
-            </li>
-        </ul>
+
+                <a class="btn btn-block btn-social btn-twitter">
+                    <span class="fa fa-twitter"></span> ... Twitter
+                </a>
+
 
         <a class="btn btn-primary" href="/wizard-form/users" role="button">All members ()</a>
 
