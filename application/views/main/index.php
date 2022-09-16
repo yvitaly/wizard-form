@@ -73,7 +73,7 @@ else { echo "style=display:none";} ?> >
     } else {
         echo "style=display:none";
     } ?> >
-        <input type="hidden" name="userId" class="userId" value ="<?php echo $_SESSION['userId'];?>" >
+        <input type="hidden" name="userId" class="userId" value =" " >
         <label>Company</label>
         <input type="text" class="form-control company" placeholder="Company" name="company">
         <br/>
@@ -125,6 +125,7 @@ else { echo "style=display:none";} ?> >
                 var countryVal = $('select.country').val();
                 var phoneVal = $('input.phone').val();
                 var emailVal = $('input.email').val();
+                var userId = $('input.userId').val();
 
 
                $('.firstStep').css('display', 'none');
@@ -133,21 +134,26 @@ else { echo "style=display:none";} ?> >
                     method: "POST",
                     url: "/wizard-form/firstform",
                     data: { firstName: firstNameVal, lastName: lastNameVal, birthdate: birthdateVal,
-                        reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, email: emailVal }
+                        reportSubject: reportSubjectVal, country: countryVal, phone: phoneVal, email: emailVal, userId:userId },
+                    success: function (data){
+                        console.log(data);
+                        $('.userId').val(data);
+                    }
                 })
             })
             $(document).ready(function (){
                 $('button.secondNext').on('click',function() {
-                    var userIdVal = $('input.userId').val();
+                    //var userIdVal = $('input.userId').val();
 
-                    console.log(userIdVal);
+
                     var companyVal = $('input.company').val();
                     var positionVal = $('input.position').val();
                     var aboutMeVal = $('textarea.aboutMe').val();
                     var photoVal = $('input.photo').val();
 
-                    //$('.social').css('display', 'block');
-                    //$('.secondStep').css('display', 'none');
+
+                    $('.social').css('display', 'block');
+                    $('.secondStep').css('display', 'none');
 
                     $.ajax({
                         method: "POST",
