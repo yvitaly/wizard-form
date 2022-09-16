@@ -33,6 +33,7 @@ class UsersController extends Controller
     public function updateAction(){
 
         $userModel = new User();
+        echo  "2565";
 
     }
 

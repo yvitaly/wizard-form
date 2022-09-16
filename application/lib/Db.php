@@ -52,7 +52,7 @@ VALUES(:firstName, :lastName, :birthdate, :reportSubject, :country, :phone, :ema
     }
 
     public function updateUser($data){
-        $sql = 'UPDATE users SET firstName, lastName, birthdate, reportSubject, country,phone, email  WHERE userId =1';
+        $sql = 'UPDATE users SET firstName, lastName, birthdate, reportSubject, country,phone, email  WHERE userId =';
         $statement= $this->db->prepare($sql);
         $statement->execute($data);
     }

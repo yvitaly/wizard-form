@@ -16,6 +16,6 @@ return [
 
     'wizard-form/secondform'=>[
         'controller'=>'users',
-        'action'=>'updete',
+        'action'=>'update',
     ]
 ];

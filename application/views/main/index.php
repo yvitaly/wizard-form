@@ -23,12 +23,13 @@
     <br/>
 <!--Google Maps-->
     <?php var_dump($_SESSION); ?>
-    <h2>"To participate in the conference, please fill out the form”</h2>
+
 
 <div class="firstStep" <?php if (empty($_SESSION['userId'])){
     echo "style=display:block";}
 else { echo "style=display:none";} ?> >
-
+    <h2>"To participate in the conference, please fill out the form”</h2>
+            <p class="errormess"></p>
             <label>First Name</label>
             <input type="text" class="form-control firstName" placeholder="First Name" name="firstName" >
         <br/>
@@ -73,6 +74,7 @@ else { echo "style=display:none";} ?> >
     } else {
         echo "style=display:none";
     } ?> >
+        <h2>"To participate in the conference, please fill out the form”</h2>
         <input type="hidden" name="userId" class="userId" value =" " >
         <label>Company</label>
         <input type="text" class="form-control company" placeholder="Company" name="company">
