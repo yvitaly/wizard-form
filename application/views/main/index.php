@@ -81,7 +81,7 @@ else { echo "style=display:none";} ?> >
         <br/>
 
         <label>Position</label>
-        <input type="text" class="form-control position" placeholder="Position" name="position">
+        <input type="text" class="form-control posittion" placeholder="Position" name="posittion">
         <br/>
 
         <label>About you</label>
@@ -149,7 +149,7 @@ else { echo "style=display:none";} ?> >
 
 
                     var companyVal = $('input.company').val();
-                    var positionVal = $('input.position').val();
+                    var posittionVal = $('input.posittion').val();
                     var aboutMeVal = $('textarea.aboutMe').val();
                     var photoVal = $('input.photo').val();
 
@@ -160,7 +160,7 @@ else { echo "style=display:none";} ?> >
                     $.ajax({
                         method: "POST",
                         url: "/wizard-form/secondform",
-                        data: { company: companyVal, position: positionVal, aboutMe: aboutMeVal,
+                        data: { company: companyVal, posittion: posittionVal, aboutMe: aboutMeVal,
                             photo: photoVal }
                         })
                 })

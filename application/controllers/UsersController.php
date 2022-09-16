@@ -19,9 +19,6 @@ class UsersController extends Controller
             "country"=>$_POST['country'],
             "phone"=>$_POST['phone'],
             "email"=>$_POST['email'],
-
-
-
         ];
 
        $userModel = new User();
@@ -31,9 +28,16 @@ class UsersController extends Controller
     }
 
     public function updateAction(){
+        $data = [
+            "company"=>$_POST['company'],
+            "posittion"=>$_POST['posittion'],
+            "aboutMe"=>$_POST['aboutMe'],
+            "photo"=>$_POST['photo'],
+        ];
 
         $userModel = new User();
-        echo  "2565";
+        $userModel->update($data);
+
 
     }
 

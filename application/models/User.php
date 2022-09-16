@@ -21,6 +21,6 @@ class User extends Model
     }
 
     public function update($data){
-
+    return $this->db->updateUser($data);
     }
 }
