@@ -6,13 +6,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost/wizard-form/public/css/style2.css">
+    <link rel="stylesheet" href="http://localhost/wizard-form/public/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-
+    <script src="https://unpkg.com/imask"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
 
 <div class="firstStep container mt-4 mb-5" <?php if (empty($_SESSION['userId'])){
     echo "style=display:block";}
-else { echo "style=display:none";} ?> >
+    else { echo "style=display:none";} ?> >
     <h2>"To participate in the conference, please fill out the form”</h2>
             <p class="errormess" style="color: red"></p>
             <label>First Name</label>
@@ -57,7 +57,14 @@ else { echo "style=display:none";} ?> >
         <br/>
 
             <label>Your phone</label>
-            <input type="tel" class="form-control phone"  name="phone" placeholder="+1(555)555-5555">
+            <input type="text" class="form-control phone"  name="phone" id="phone" placeholder="+1(000)000-0000" >
+            <script>
+                var element = document.getElementById('phone');
+                var maskOptions = {
+                    mask: '+{1}(000)000-0000'
+                };
+                var mask = IMask(element, maskOptions);
+            </script>
 
         <br/>
 
@@ -97,15 +104,24 @@ else { echo "style=display:none";} ?> >
 
     </div>
 
-    <div class="social container mt-4 mb-5" style="display: none">
+    <div class="social container mt-4 mb-5 " style="display: none" >
 
-                <a class="btn btn-block btn-social btn-facebook">
-                    <span class="fa fa-facebook"></span> ... Facebook
-                </a>
+        <div class="row ">
+            <div class="sicon d-flex flex-row mb-5">
 
-                <a class="btn btn-block btn-social btn-twitter">
-                    <span class="fa fa-twitter"></span> ... Twitter
-                </a>
+                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 text-center">
+                    <div class="icon-circle">
+                        <a href="#" class="ifacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 text-center">
+                    <div class="icon-circle">
+                        <a href="#" class="itwittter" title="Twitter"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <a class="btn btn-primary" href="/wizard-form/users" role="button">All members ()</a>
